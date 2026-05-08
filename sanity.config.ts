@@ -1,4 +1,4 @@
-' 'use client'
+ 'use client'
 
 /**
  * Configuration pour le Sanity Studio monté sur `/src/app/studio/[[...tool]]/page.tsx`
@@ -8,7 +8,7 @@ import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 
-// On pointe vers les fichiers qui sont DANS le dossier src
+// Vérifie bien que ces fichiers existent dans src/sanity/
 import {apiVersion, dataset, projectId} from './src/sanity/env'
 import {schema} from './src/sanity/schemaTypes'
 

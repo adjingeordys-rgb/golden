@@ -1,13 +1,20 @@
-/**
- * Route du Sanity Studio exposee sur /studio.
- */
-import { NextStudio } from "next-sanity/studio";
-import config from "../../../../sanity.config";
+ 'use client'
 
-export const dynamic = "force-static";
+import {visionTool} from '@sanity/vision'
+import {defineConfig} from 'sanity'
+import {structureTool} from 'sanity/structure'
 
-export { metadata, viewport } from "next-sanity/studio";
+// On pointe vers les fichiers qui sont DANS le dossier src
+import {apiVersion, dataset, projectId} from './src/sanity/env'
+import {schema} from './src/sanity/schemaTypes'
 
-export default function StudioPage() {
-  return <NextStudio config={config} />;
-}
+export default defineConfig({
+  basePath: '/studio',
+  projectId,
+  dataset,
+  schema,
+  plugins: [
+    structureTool(),
+    visionTool({defaultApiVersion: apiVersion}),
+  ],
+})
