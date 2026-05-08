@@ -1,0 +1,3 @@
+git add .
+git commit -m "Final fix: Corrected paths to src/sanity"
+git push origin main
